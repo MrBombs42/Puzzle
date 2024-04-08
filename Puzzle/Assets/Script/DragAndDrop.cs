@@ -5,6 +5,11 @@ public class DragAndDrop : MonoBehaviour
 	private Vector3 offset;
 	private bool isDragging = false;
 
+	public void Release()
+	{
+
+	}
+
 	private void OnMouseDown()
 	{
 		offset = gameObject.transform.position - GetMouseWorldPosition();

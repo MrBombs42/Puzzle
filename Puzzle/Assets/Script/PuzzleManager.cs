@@ -5,6 +5,7 @@ namespace Assets.Script
 	public class PuzzleManager : MonoBehaviour
 	{
 		[SerializeField] private PuzzlePiece[] _pieces;
+		[SerializeField] private float _shuffleRange = 5;
 
 		private void Awake()
 		{
@@ -16,6 +17,13 @@ namespace Assets.Script
 			}
 		}
 
+		private void Start()
+		{
+			foreach (var piece in _pieces)
+			{
+				piece.MoveAndInit(piece.transform.position + Random.insideUnitSphere * _shuffleRange);
+			}
+		}
 
 		private void Update()
 		{

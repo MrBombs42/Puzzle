@@ -4,13 +4,13 @@ namespace Assets.Script
 {
 	public class ToggleVisibility : MonoBehaviour
 	{
-		[SerializeField] private PuzzlePiece[] _pieces;
+		[SerializeField] private FakePuzzlePiece[] _pieces;
 
 		private bool _isVisible;
 
 		private void Awake()
 		{
-			_pieces = GetComponentsInChildren<PuzzlePiece>(true);
+			_pieces = GetComponentsInChildren<FakePuzzlePiece>(true);
 
 			foreach (var piece in _pieces)
 			{
